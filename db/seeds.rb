@@ -2,6 +2,8 @@ require 'json'
 require 'open-uri'
 
 Ingredient.delete_all
+Cocktail.delete_all
+
 
 puts 'fetching list of ingredients'
 
@@ -18,3 +20,16 @@ drinks.each do |hash_ingredient|
 end
 
 puts "Finishing creating ingredients in the db"
+
+puts 'fetching list of cocktails'
+
+url = 'https://raw.githubusercontent.com/teijo/iba-cocktails/master/recipes.json'
+cocktails = JSON.parse(open(url).read)
+
+puts "Creating cocktails"
+
+cocktails.each do |cocktail|
+  Cocktail.create(name: cocktail["name"])
+end
+
+puts "Finishing creating cocktails in the db"
