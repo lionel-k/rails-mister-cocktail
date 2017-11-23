@@ -1,5 +1,16 @@
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.association :ingredient %>
-  <%= f.input :description %>
-  <%= f.submit "Add an ingredient", class: "btn btn-primary" %>
+<%#= f.association :ingredient %>
+
+<%= select_tag "ingredients_name", options_from_collection_for_select(
+  Ingredient.all.order(:name),
+  :name, :name),
+class: 'select2' %>
+
+<%#= f.association :ingredient, collection: Company.active.order(:name), prompt: "Choose a Company" %>
+<%= f.association :ingredient, collection: Ingredient.all.order(:name), prompt: "Choose an ingredient", class: 'select2' %>
+
+<%= f.input :description %>
+<%= f.submit "Add an ingredient", class: "btn btn-primary" %>
 <% end %>
+
+

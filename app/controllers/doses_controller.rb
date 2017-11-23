@@ -17,9 +17,8 @@ class DosesController < ApplicationController
   end
 
   def destroy
-    cocktail = Cocktail.find_by_id(@dose.cocktail)
     @dose.destroy
-    redirect_to cocktail_path(cocktail)
+    redirect_to cocktail_path(@dose.cocktail)
   end
 
   private

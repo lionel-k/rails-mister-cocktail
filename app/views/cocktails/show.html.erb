@@ -5,7 +5,7 @@
 <% doses.each do |dose| %>
   <p><%= dose.ingredient.name %> -
     <%= dose.description %> |
-    <%= link_to "Remove", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
+    <%= link_to "Remove", dose_path(dose), method: :delete %></p>
 <% end %>
 
 
