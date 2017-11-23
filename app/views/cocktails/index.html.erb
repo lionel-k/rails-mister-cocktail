@@ -1,4 +1,30 @@
-<h1>List of Cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-<% end %>
+<div class="banner home-banner">
+  <div class="banner-content">
+    <h1>Home-Made Cocktail</h1>
+    <p>Learn to make cocktails, drink them with moderation </p>
+    <%= link_to "Add Your Own Cocktail", new_cocktail_path, class: "btn btn-primary btn-lg"%>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center">Your Library of Cocktails</h2>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.solidbackgrounds.com/images/2560x1440/2560x1440-black-solid-color-background.jpg');">
+       <!--      <div class="card-category">Popular</div> -->
+       <div class="card-description">
+        <h2><%= cocktail.name %></h2>
+        <p>Very cool city, the best</p>
+      </div>
+      <!--           <a class="card-link" href="#" ></a> -->
+      <%= link_to '', cocktail_path(cocktail), class: "card-link" %>
+    </div>
+  </div>
+  <% end %>
+
+</div>
+</div>
+
+
+
