@@ -12,12 +12,16 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.solidbackgrounds.com/images/2560x1440/2560x1440-black-solid-color-background.jpg');">
-       <!--      <div class="card-category">Popular</div> -->
        <div class="card-description">
         <h2><%= cocktail.name %></h2>
-        <p>Very cool city, the best</p>
+
+        <% doses = cocktail.doses %>
+        <% doses.each do |dose| %>
+        <p><%= dose.ingredient.name %> -
+          <%= dose.description %>
+        </p>
+        <% end %>
       </div>
-      <!--           <a class="card-link" href="#" ></a> -->
       <%= link_to '', cocktail_path(cocktail), class: "card-link" %>
     </div>
   </div>
