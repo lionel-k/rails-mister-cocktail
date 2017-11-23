@@ -8,15 +8,17 @@
   <div class="row">
     <div class="col-xs-6">
       <h2>Ingredients</h2>
-      <% doses = @cocktail.doses %>
-      <% doses.each do |dose| %>
-        <p><%= dose.ingredient.name %> -
-          <%= dose.description %>
-          <%= link_to dose_path(dose), method: :delete do %>
-          <i class="fa fa-trash-o" aria-hidden="true"></i>
-          <% end %>
-        </p>
-      <% end %>
+      <ul>
+        <% doses = @cocktail.doses %>
+        <% doses.each do |dose| %>
+          <li><%= dose.ingredient.name %> -
+            <%= dose.description %>
+            <%= link_to dose_path(dose), method: :delete do %>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
 
     </div>
     <div class="col-xs-6">
