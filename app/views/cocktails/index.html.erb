@@ -2,12 +2,12 @@
   <div class="banner-content">
     <h1>Home-Made Cocktail</h1>
     <p><span id="banner-typed-text"></span></p>
-    <%= link_to "Add Your Own Cocktail", new_cocktail_path, class: "btn btn-primary btn-lg"%>
+    <%= link_to "Add Your Own Cocktail", new_cocktail_path, class: "btn btn-primary btn-lg my-btn"%>
   </div>
 </div>
 
 <div class="container">
-  <h2 class="text-center">Your Library of Cocktails</h2>
+  <h2 class="text-center title">Your Library of Cocktails</h2>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
