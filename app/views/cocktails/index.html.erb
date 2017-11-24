@@ -12,8 +12,9 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo if cocktail.photo.present? %>');">
+       <div class="card-category"><%= cocktail.name %></div>
        <div class="card-description">
-        <h2><%= cocktail.name %></h2>
+        <h2><%#= cocktail.name %></h2>
 
         <% doses = cocktail.doses %>
         <% doses.each do |dose| %>
