@@ -111,11 +111,18 @@ cocktails.each do |c|
   cocktails_ingredients << c if cocktails_names.include? c["name"]
 end
 
+cocktails_preparations = {}
+cocktails.each do |c|
+  cocktails_preparations[c["name"]] = c["preparation"] if cocktails_names.include? c["name"]
+end
+
 cocktails_ingredients.each do |cocktail|
-  p name = cocktail["name"]
+  name = cocktail["name"]
   url = cocktails_urls[name]
+  preparation = cocktails_preparations[name]
   new_cocktail = Cocktail.new(name: name)
   new_cocktail.remote_photo_url = url
+  new_cocktail.preparation = preparation
   new_cocktail.save
   cocktail["ingredients"].each do |ingredient_details|
     dose = Dose.new
