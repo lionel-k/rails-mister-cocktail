@@ -4,13 +4,13 @@
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
     "aos": "^2.2.0",
-    "bootstrap": "3",
-    "coffeescript": "1.12.7",
+    "bootstrap": "4",
+    "coffeescript": "2.3.2",
     "jquery": "^3.2.1",
     "select2": "^4.0.6-rc.1",
     "typed.js": "^2.0.6"
   },
   "devDependencies": {
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^3.1.10"
   }
 }
